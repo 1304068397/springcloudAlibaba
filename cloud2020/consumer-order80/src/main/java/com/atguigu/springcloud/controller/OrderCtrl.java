@@ -24,7 +24,8 @@ import javax.annotation.Resource;
 @RequestMapping("OrderCtrl")
 public class OrderCtrl {
 
-    public static final String PAYMENT_URL="http://localhost:8001";
+    //public static final String PAYMENT_URL="http://localhost:8001";  只认微服务名称，不能把ip+端口写死
+    public static final String PAYMENT_URL="http://CLOUD-PAYMENT-SERVICE";
     //注入对象并实例化
     @Resource
     private RestTemplate restTemplate;
