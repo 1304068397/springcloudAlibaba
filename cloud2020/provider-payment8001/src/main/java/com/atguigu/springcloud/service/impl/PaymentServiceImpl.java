@@ -4,6 +4,7 @@ import com.atguigu.springcloud.dao.PaymentDao;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
+import com.baomidou.mybatisplus.core.injector.methods.SelectById;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,11 @@ public class PaymentServiceImpl extends ServiceImpl<PaymentDao,Payment> implemen
         boolean b = saveBatch(payments); 批量插入*/
         boolean b = saveOrUpdate(payment);
         return new CommonResult(200,"成功",payment);
+    }
+
+    @Override
+    public CommonResult queryById(Payment payment) {
+        Payment paymentRes = getById(payment.getId());
+        return new CommonResult(200,"成功",paymentRes);
     }
 }

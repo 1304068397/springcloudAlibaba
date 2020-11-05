@@ -32,4 +32,11 @@ public class PaymentCtrl {
     public CommonResult createOrUpdate(@RequestBody Payment payment){
         return paymentService.createOrUpdate(payment);
     }
+
+    @ApiOperation(value = "2. 根据id查询")
+    @PostMapping("queryById")
+    public CommonResult queryById(@RequestBody Payment payment){
+        return paymentService.queryById(payment);
+    }
+
 }
