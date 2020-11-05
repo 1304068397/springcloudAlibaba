@@ -20,3 +20,5 @@ eureka:
   instance:
     instance-id: payment服务1   #Eureka显示微服务名称
     prefer-ip-address: true  #Eureka显示ip，也就是部署机器的ip
+    lease-renewal-interval-in-seconds: 1 #Eureka客户端向服务端发送心跳时间，默认30s
+    lease-expiration-duration-in-seconds: 2 #最后一次心跳超时上限，默认90s,超时剔除服务
