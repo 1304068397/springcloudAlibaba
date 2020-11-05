@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @PackageName:com.atguigu.springcloud
  * @ClassName:PaymentMain8001
- * @Description:
+ * @Description: 服务提供者
  * @Author:王宗保
  * @Version V1.0.0
  * @Date:2020/11/4 13:32

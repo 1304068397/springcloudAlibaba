@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @PackageName:com.atguigu.springcloud
  * @ClassName:OrderMain80
- * @Description:
+ * @Description: 消费者
  * @Author:王宗保
  * @Version V1.0.0
  * @Date:2020/11/5 10:05
