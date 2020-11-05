@@ -6,5 +6,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 public interface PaymentService  extends IService<Payment>{
 
-    CommonResult create(Payment payment);
+    CommonResult createOrUpdate(Payment payment);
 }

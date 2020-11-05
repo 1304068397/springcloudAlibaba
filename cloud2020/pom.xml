@@ -24,7 +24,6 @@
     <mysql.version>8.0.18</mysql.version>
     <druid.version>1.2.1</druid.version>
     <mybatisplus.version>3.3.0</mybatisplus.version>
-    <mybatis.plus.version>3.3.0</mybatis.plus.version>
     <mybatisplusextension.version>3.3.0</mybatisplusextension.version>
     <knife4j.version>2.0.3</knife4j.version>
     <mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
@@ -33,11 +32,6 @@
   <!--子模块继承之后，提供作用：锁定版本+子module不用写groupId和version-->
   <dependencyManagement>  <!--父pom依赖管理，统一管理version-->
   <dependencies>
-    <dependency>
-      <groupId>com.baomidou</groupId>
-      <artifactId>mybatis-plus-generator</artifactId>
-      <version>${mybatis.plus.version}</version>
-    </dependency>
   <!--  <dependency>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-project-info-reports-plugin</artifactId>

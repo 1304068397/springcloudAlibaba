@@ -23,11 +23,13 @@ import java.util.List;
 public class PaymentServiceImpl extends ServiceImpl<PaymentDao,Payment> implements PaymentService {
 
     @Override
-    public CommonResult create(Payment payment) {
-        //boolean save = save(payment);
-        List<Payment> payments = new ArrayList<>();
+    public CommonResult createOrUpdate(Payment payment) {
+        //boolean save = save(payment); 单个插入
+
+        /*List<Payment> payments = new ArrayList<>();
         payments.add(payment);
-        boolean b = saveBatch(payments);
+        boolean b = saveBatch(payments); 批量插入*/
+        boolean b = saveOrUpdate(payment);
         return new CommonResult(200,"成功",payment);
     }
 }

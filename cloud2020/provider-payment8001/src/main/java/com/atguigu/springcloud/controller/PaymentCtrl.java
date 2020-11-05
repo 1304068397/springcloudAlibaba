@@ -22,14 +22,14 @@ import javax.annotation.Resource;
  */
 @Api(tags = "支付Ctrl")
 @RestController
-@RequestMapping("create")
+@RequestMapping("PaymentCtrl")
 public class PaymentCtrl {
     @Resource
     PaymentService paymentService;
 
-    @ApiOperation(value = "1. 测试插入")
-    @PostMapping("create")
-    public CommonResult create(@RequestBody Payment payment){
-        return paymentService.create(payment);
+    @ApiOperation(value = "1. 新增编辑")
+    @PostMapping("createOrUpdate")
+    public CommonResult createOrUpdate(@RequestBody Payment payment){
+        return paymentService.createOrUpdate(payment);
     }
 }
