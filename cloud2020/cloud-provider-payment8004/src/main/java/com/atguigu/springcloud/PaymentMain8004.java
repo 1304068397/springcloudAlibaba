@@ -3,21 +3,19 @@ package com.atguigu.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @PackageName:com.atguigu.springcloud
- * @ClassName:PaymentMain8001
- * @Description: 服务提供者
+ * @ClassName:PaymentMain8004
+ * @Description: Zookeeper注册中心
  * @Author:王宗保
  * @Version V1.0.0
- * @Date:2020/11/4 13:32
+ * @Date:2020/11/5 21:06
  */
-@EnableEurekaClient     //Eureka提供者
 @SpringBootApplication
-@EnableDiscoveryClient  //服务发现，提供服务的ip+端口
-public class PaymentMain8002 {
+@EnableDiscoveryClient //该注解用于使用consul或者zookeeper作为注册中心时注册服务
+public class PaymentMain8004 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8002.class, args);
+        SpringApplication.run(PaymentMain8004.class, args);
     }
 }
