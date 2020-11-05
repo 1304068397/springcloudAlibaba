@@ -7,10 +7,6 @@ import com.atguigu.springcloud.service.PaymentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @PackageName:com.atguigu.springcloud.service.impl
  * @ClassName:PaymentServiceImpl
