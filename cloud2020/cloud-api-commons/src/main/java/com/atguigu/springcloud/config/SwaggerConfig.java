@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.conf;
+package com.atguigu.springcloud.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.google.common.base.Function;
@@ -18,6 +18,7 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
