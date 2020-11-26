@@ -5,6 +5,7 @@ import com.atguigu.springcloud.entities.Payment;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -42,6 +43,18 @@ public class OrderCtrl {
     public CommonResult<Payment> queryById(@RequestBody Payment payment){
         log.info(payment.toString());
         return restTemplate.postForObject(PAYMENT_URL+"/PaymentCtrl/queryById",payment,CommonResult.class);
+    }
+
+    @ApiOperation(value = "3. 根据id查询（）")
+    @PostMapping("postForEntity")
+    public CommonResult<Payment> postForEntity(@RequestBody Payment payment){
+        log.info(payment.toString());
+        ResponseEntity<CommonResult> res = restTemplate.postForEntity(PAYMENT_URL + "/PaymentCtrl/queryById", payment, CommonResult.class);
+        if (res.getStatusCode().is2xxSuccessful()){
+            return res.getBody();
+        }else {
+            return new CommonResult<>(500,"失败！");
+        }
     }
 
 }
