@@ -9,13 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @PackageName:com.atguigu.springcloud.controller
@@ -64,6 +62,17 @@ public class PaymentCtrl {
     @PostMapping("queryById")
     public CommonResult queryById(@RequestBody Payment payment){
         return paymentService.queryById(payment);
+    }
+
+    @ApiOperation(value = "3. 超时接口")
+    @GetMapping("timeout")
+    public CommonResult timeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3l);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return new CommonResult(200,"success","端口："+serverPort);
     }
 
 }
