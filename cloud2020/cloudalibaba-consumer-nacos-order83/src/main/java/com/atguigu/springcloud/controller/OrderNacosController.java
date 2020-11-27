@@ -40,9 +40,9 @@ public class OrderNacosController {
         return restTemplate.getForObject(serverURL+"/PaymentCtrl/payment/nacos/"+id,String.class);
     }
 
-    @ApiOperation(value = "2. 根据id获取数据-feign")
+/*    @ApiOperation(value = "2. 根据id获取数据-feign")
     @GetMapping(value = "/consumer/payment/nacos/{id}")
     public String paymentInfoFeign(@PathVariable("id") Integer id) {
         return paymentFeignService.getPayment(id);
-    }
+    }*/
 }
