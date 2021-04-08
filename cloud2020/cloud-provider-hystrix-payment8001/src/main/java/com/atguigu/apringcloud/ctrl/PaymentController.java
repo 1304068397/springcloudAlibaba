@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 @RestController
 @Slf4j
@@ -30,6 +31,16 @@ public class PaymentController {
         String result = paymentService.paymentInfo_TimeOut(id);
         log.info("*******result:"+result);
         return result;
+    }
+
+    @GetMapping("/payment/get/{id}")
+    public String get(@PathVariable("id") Integer id){
+        return "get:"+id;
+    }
+
+    @GetMapping("/payment/lb")
+    public String lb(){
+        return serverPort+"lb(:"+new Date();
     }
 }
 
